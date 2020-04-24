@@ -13,7 +13,7 @@ import { User } from './user.model';
 })
 //@Injectable()
 export class UserService {
-  readonly rootUrl = 'http://kotbotticket-001-site3.btempurl.com';
+  readonly rootUrl = '//kotbotticket-001-site3.btempurl.com';
 
   constructor(private http: HttpClient) { }
 
