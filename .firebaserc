@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "restopos-3d728": {
+      "hosting": {
+        "AppPalika": [
+          "restopos-3d728"
+        ]
+      }
+    }
+  }
+}

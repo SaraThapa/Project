@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "AppPalika",
+      "public": "dist/AppPalika",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

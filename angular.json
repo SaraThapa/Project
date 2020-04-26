@@ -69,7 +69,6 @@
           "options": {
             "browserTarget": "AppPalika:build",
             "proxyConfig": "proxy.conf.json"
-
           },
           "configurations": {
             "production": {
@@ -124,6 +123,10 @@
               "devServerTarget": "AppPalika:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
