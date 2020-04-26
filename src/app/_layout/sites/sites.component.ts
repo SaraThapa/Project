@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sites.component.css']
 })
 export class SitesComponent implements OnInit {
+  PageTitle: '';
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  setTitle($event) {
+    this.PageTitle = $event;
   }
 
 }

@@ -1,0 +1,83 @@
+<p class="display-4"><b>Test School</b></p>
+<div class="row">
+  <div class="col-2 text-center">
+    <img width="100"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdkTmGz0pq8cqWzU-6oO6ATO6Oh_l17oADPcAGIZsqqPpPtH7T&usqp=CAU">
+  </div>
+  <div class="col">
+    <P class="lead m-0">
+      <b>
+        Test School
+      </b>
+    </P>
+    <p class="mb-1"> Thamel, Kathmandu, Nepal <br>
+      Ph: 014434165</p>
+    <P><b>First Term Terminal Examination 2076</b></P>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-4">
+    <b>Name: </b> Aasha Nagarkoti
+  </div>
+  <div class="col-3">
+    <b>Class: </b> Two
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <b>Guardian's Name : </b> Raj K.Nagarkoti
+  </div>
+  <div class="col">
+    <b>Roll : </b> 8
+  </div>
+  <div class="col">
+    11/3/2068
+  </div>
+  <div class="col">
+    100194
+  </div>
+</div>
+
+<div class="responsive-table mt-5">
+  <table class="table table-bordered table-sm">
+    <thead>
+      <tr>
+        <th rowspan="2">S.N</th>
+        <th rowspan="2" width="250">Subjects </th>
+        <th rowspan="2">Full Marks </th>
+        <th rowspan="2">Pass Marks </th>
+        <th colspan="2" width="150">Marks Obtained </th>
+        <th rowspan="2">Total</th>
+        <th rowspan="2">Highest Marks</th>
+        <th colspan="3">Obtain Marks</th>
+        <th rowspan="2">Grade Point</th>
+        <th rowspan="2">Remarks</th>
+      </tr>
+      <tr>
+        <td>Theo.</td>
+        <td>Pract.</td>
+        <td>Theo.</td>
+        <td>Pract.</td>
+        <td>Total</td>
+      </tr>
+    </thead>
+    <tbody *ngIf="subjects">
+      <tr *ngFor="let subject of subjects">
+        <td>{{ subject.sn }}</td>
+        <td>{{ subject.subject }}</td>
+        <td>100</td>
+        <td>50</td>
+        <td>64</td>
+        <td>17</td>
+        <td>81</td>
+        <td>100</td>
+        <td>A</td>
+        <td>B</td>
+        <td>A</td>
+        <td>3.6</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

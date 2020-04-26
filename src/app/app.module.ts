@@ -19,6 +19,10 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { SitesComponent } from './_layout/sites/sites.component';
 import { AppHeaderComponent } from './_layout/header/header.component';
 import { AppFooterComponent } from './_layout/footer/footer.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ResultComponent } from './result/result.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { ResultViewComponent } from './result-view/result-view.component';
 
 
 
@@ -34,6 +38,10 @@ import { AppFooterComponent } from './_layout/footer/footer.component';
     SitesComponent,
     AppHeaderComponent,
     AppFooterComponent,
+    ProfileComponent,
+    ResultComponent,
+    AttendanceComponent,
+    ResultViewComponent,
 
 
 

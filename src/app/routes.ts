@@ -6,6 +6,10 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { AuthGuard } from './auth/auth.guard';
 
+import { ProfileComponent } from './profile/profile.component';
+import { ResultComponent } from './result/result.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+
 
 export const appRoutes: Routes = [
 
@@ -17,7 +21,9 @@ export const appRoutes: Routes = [
         component: SitesComponent,
         children: [
             { path: '', component: HomeComponent, pathMatch: 'full' },
-            // { path: 'results', component: ResultsComponent, pathMatch: 'full' },
+            { path: 'profile', component: ProfileComponent },
+            { path: 'results', component: ResultComponent },
+            { path: 'attendance', component: AttendanceComponent },
         ]
 
     },
