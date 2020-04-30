@@ -39,4 +39,12 @@ export class UserService {
     return this.http.get(this.rootUrl + '/api/Account/getUserClaims');
   }
 
+  getUserDetails(userId, school_id) {
+    return this.http.get(this.rootUrl + '/api/Login/GetList/' + userId + '/' + school_id);
+  }
+
+  getUserResults(userId, clss, terms, section, school_id, year = 2076) {
+    return this.http.get(this.rootUrl + '/api/Grades/GetGrades/' + userId + '/' + clss + '/' + terms + '/' + year + '/' + section.trim() + '/' + school_id);
+  }
+
 }

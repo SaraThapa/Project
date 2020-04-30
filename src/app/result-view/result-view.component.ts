@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ResultsService } from '../results.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-result-view',
@@ -8,45 +8,32 @@ import { ResultsService } from '../results.service';
 })
 export class ResultViewComponent implements OnInit {
 
-  subjects: Array<any> = [
-    {
-      sn: 1,
-      subject: 'Science & Environment',
-      fullmarks: 100,
-      passmarks: 50,
-      mo_tho: 64,
-      mo_pra: 17,
-      total: 81,
-      hightest_marks: 100,
-      gpa_th: 'A',
-      gpa_prac: 'B',
-      gpa_total: 'A',
-      grade_point: 3.6,
-      remarks: '',
-    },
-    {
-      sn: 2,
-      subject: 'Speedy Maths',
-      fullmarks: 100,
-      passmarks: 50,
-      mo_tho: 64,
-      mo_pra: 17,
-      total: 81,
-      hightest_marks: 100,
-      gpa_th: 'A',
-      gpa_prac: 'B',
-      gpa_total: 'A',
-      grade_point: 3.6,
-      remarks: '',
-    }
-  ];
+  userClaims: any
+  userDetails: any
+  userResults: any
+  userId: any
+  schoolId: any
+  @Input() term: ''
 
   constructor(
-    private ResultsService: ResultsService,
+    private userService: UserService,
   ) { }
 
   ngOnInit(): void {
-    // this.ResultsService.getResults().subscribe(data => this.subjects = data);
+    this.userService.getUserClaims().subscribe((data: any) => {
+      this.userClaims = data;
+
+      var username = this.userClaims.userName;
+      username = username.split('@');
+      this.userService.getUserDetails(username[0], username[1]).subscribe((data: any) => {
+        this.userDetails = data[0];
+
+        this.userService.getUserResults(username[0], this.userDetails.class_Student, this.term, this.userDetails.sectionField, username[1]).subscribe((data: any) => {
+          this.userResults = data;
+
+        });
+      });
+    });
   }
 
 }

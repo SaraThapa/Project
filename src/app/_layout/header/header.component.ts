@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../../shared/user.service';
 
 @Component({
   selector: 'app-header',
@@ -8,23 +7,18 @@ import { UserService } from '../../shared/user.service';
   styleUrls: ['./header.component.css']
 })
 export class AppHeaderComponent implements OnInit {
-  userClaims: any
 
-  constructor(private router: Router, private userService: UserService) { }
+  @Input() userClaims: any;
+  @Input() userDetails: any;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-
-    this.userService.getUserClaims().subscribe((data: any) => {
-      this.userClaims = data;
-
-    });
-
   }
 
   Logout() {
     localStorage.removeItem('userToken');
     this.router.navigate(['/login'])
-
   }
 
 }

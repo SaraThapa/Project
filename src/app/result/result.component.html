@@ -22,22 +22,21 @@
         <div class="card-header">
           <div class="row">
             <div class="col-sm-3">
-              <select class="form-control">
-                <option value="">Select Terms</option>
-                <option value="first_terms">First Terms</option>
-                <option value="second_terms">Second Terms</option>
-                <option value="third_terms">Third Terms</option>
+              <select class="form-control" [(ngModel)]="term_value">
+                <option value="" selected>Select Terms</option>
+                <!-- <option value="First Term">First Term</option>
+                <option value="Second Term">Second Term</option> -->
+                <option value="Final Term">Final Term</option>
               </select>
             </div>
             <div class="col-sm-2">
-              <button class="btn btn-primary btn-pill btn-block"> View</button>
+              <button class="btn btn-primary btn-pill btn-block" (click)="viewResult()"> View</button>
             </div>
           </div>
         </div>
         <div class="card-body">
-          Please Select terms to view result.
-          <hr>
-          <app-result-view></app-result-view>
+          <app-result-view [term]="term" *ngIf="term; else msgBlock"></app-result-view>
+          <ng-template #msgBlock>Please Select terms to view result.</ng-template>
         </div>
       </div>
     </div>
