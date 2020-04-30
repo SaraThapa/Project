@@ -33,22 +33,22 @@
       <thead>
         <tr>
           <th rowspan="2">S.N</th>
-          <th rowspan="2" width="250">Subjects </th>
+          <th rowspan="2" width="50%">Subjects </th>
           <!-- <th rowspan="2">Full Marks </th>
           <th rowspan="2">Pass Marks </th>
           <th colspan="2" width="150">Marks Obtained </th>
           <th rowspan="2">Total</th>
           <th rowspan="2">Highest Marks</th> -->
-          <th colspan="3">Obtain Marks</th>
-          <th rowspan="2">Grade Point</th>
-          <th rowspan="2">Remarks</th>
+          <th colspan="3" class="text-center">Obtain Marks</th>
+          <th rowspan="2" class="text-center">Grade Point</th>
+          <!-- <th rowspan="2">Remarks</th> -->
         </tr>
         <tr>
           <!-- <td>Theo.</td>
           <td>Pract.</td> -->
-          <td>Theory</td>
-          <td>Practical</td>
-          <td>Total</td>
+          <td class="text-center">Theory</td>
+          <td class="text-center">Practical</td>
+          <td class="text-center">Total</td>
         </tr>
       </thead>
       <tbody *ngIf="userResults.subjects">
@@ -59,21 +59,20 @@
           <td>{{ subject.totalPass }}</td>
           <td>{{ subject.theory }}</td>
           <td>{{ subject.practical }}</td> -->
-          <td>{{ subject.theoGPA }}</td>
-          <td>{{ subject.praGPA }}</td>
-          <td>{{ subject.totalGPA }}</td>
-          <td>{{ subject.totalGPoint }}</td>
-          <td>-</td>
+          <td class="text-center">{{ subject.theoGPA }}</td>
+          <td class="text-center">{{ subject.praGPA }}</td>
+          <td class="text-center">{{ subject.totalGPA }}</td>
+          <td class="text-center">{{ subject.totalGPoint }}</td>
         </tr>
         <tr>
           <th colspan="2"></th>
           <th colspan="3" class="text-center">Average Grade</th>
-          <th colspan="2" class="text-center">Grade Point Average(GPA) </th>
+          <th class="text-center">Grade Point Average(GPA) </th>
         </tr>
         <tr>
           <th colspan="2"></th>
           <td colspan="3" class="text-center">{{ userResults.finalGPA }}</td>
-          <td colspan="2" class="text-center">{{ userResults.finalGPoint }}</td>
+          <td class="text-center">{{ userResults.finalGPoint }}</td>
         </tr>
       </tbody>
     </table>
