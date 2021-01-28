@@ -9,6 +9,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { ResultComponent } from './result/result.component';
 import { AttendanceComponent } from './attendance/attendance.component';
+import { UploadresultComponent} from './uploadresult/uploadresult.component';
 
 
 export const appRoutes: Routes = [
@@ -24,6 +25,7 @@ export const appRoutes: Routes = [
             { path: 'profile', component: ProfileComponent },
             { path: 'results', component: ResultComponent },
             { path: 'attendance', component: AttendanceComponent },
+            { path: 'uploadresult', component: UploadresultComponent},
         ]
 
     },
