@@ -17,6 +17,7 @@
     </div>
     <div class="content">
       <div class="container-fluid">
+        <form #studentDetail=ngForm (ngSubmit)="onSubmit(studentDetail.value)">
         <div class="card">
           <div class="card-header">
             <div *ngIf="isSelectError" class="alert alert-danger">
@@ -128,44 +129,57 @@
                 <button class="btn btn-primary btn-pill btn-block"   (click)="submit()">Submit</button>
               </div>
             </div>
+
+            <form #studentSubject=ngForm (ngSubmit)="submitSubject(studentSubject.value)">
             <div class="row" *ngIf="subjects && subjects.length > 0">
               <div class="col-sm-2 mt-2">
-                <select class="form-control">
-                  <option value="" selected>Choose Subject</option>
-                  <option [value]="subject.subject" *ngFor="let subject of subjects">{{subject.subject}}</option>
+                <select name="subjectname" [(ngModel)]="subjectSelected" class="form-control">
+                  <option value="" >Choose Subject</option>
+                  <option [value]="i+1" *ngFor="let subject of subjects;let i = index">{{subject.subject}}</option>
                 </select>
+                <br>
               </div>
               <div class="col-sm-2 mt-2">
                 <button class="btn btn-primary btn-pill btn-block" (click)="loadstudent()">Load student</button>
               </div>
             </div>
+          </form>
           </div>
         </div>
+      </form>
       </div>
     </div>
 <!-- All student result start -->
-    <table *ngIf="allstudent && allstudent.length > 0" id="example" class="table table-striped table-bordered" style="width:100%">
-      <thead>
-          <tr>
-            <th>Student name</th>
-            <th>Marks</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor='let student of allstudent'>
-            <td>{{student.name_field}}</td>
-            <td><input type="text" name="marks"></td>
-          </tr>
-        </tbody>
-        <div class="col-sm-2">
-          <button class="btn btn-primary btn-pill btn-block" (click)="save()">save</button>
-        </div>
-    </table> 
+    <div class="">
+      <table *ngIf="allstudent && allstudent.length > 0" id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+              <th>StudentId</th>
+              <th>Student name</th>
+              <th>Student Rollno</th>
+              <th>Theory</th>
+              <th>Practical</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let student of allstudent; let i = index'>
+              <input type="text" [(ngModel)]="allstudent[i].studentid">
+              <td>{{student.name_field}}</td>
+              <td>{{student.roll_Stu}}</td>
+              <td><input type="number" [(ngModel)]="allstudent[i].theory" *ngIf="subjects[(subjectSelected - 1)].theory > 0" (keyup)="theoryFullMarkCheck(i)" /></td>
+              <td><input type="number" [(ngModel)]="allstudent[i].practical" *ngIf="subjects[(subjectSelected - 1)].fullpractical > 0"></td>
+          </tbody>
+          <div class="col-sm-12">
+            <button class="btn btn-primary btn-pill btn-block" (click)="studentMarksave()">save</button>
+          </div>
+      </table>
+  </div>
+
 <!-- All student result end -->
 
- 
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
-  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script> 
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script>
