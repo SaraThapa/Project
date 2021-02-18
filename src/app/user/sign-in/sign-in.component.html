@@ -1,16 +1,17 @@
+
 <div class="card rounded-0 shadow form-signin">
-  <div class="card-body p-5">
+  <div class="card-body p-5 text-center">
     <h1 class="display-4 mb-3">Login</h1>
     <div *ngIf="isLoginError" class="alert alert-danger">
       <i class="fas fa-exclamation-triangle"></i> Incorrect username or password
     </div>
-    <form #loginForm="ngForm" class="" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
+    <form  #loginForm="ngForm"  class="" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-user"></i></div>
           </div>
-          <input type="text" #UserName ngModel name="UserName" placeholder="Username" class="form-control">
+          <input type="text" #UserName ngModel name="UserName" placeholder="Username"  class="form-control">
         </div>
       </div>
       <div class="form-group">
@@ -18,13 +19,15 @@
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-lock"></i></div>
           </div>
-          <input type="password" #Password ngModel name="Password" placeholder="Password" class="form-control">
+          <input type="password" #Password ngModel name="Password" placeholder="Password"  class="form-control">
         </div>
       </div>
       <div class="form-group">
-        <button [disabled]="!loginForm.valid" class="btn btn-primary rounded-pill px-5 mt-3"
+        <button  class="btn btn-primary rounded-pill bg-primary px-5 mt-3"
           type="submit">Login</button>
       </div>
     </form>
   </div>
 </div>
+
+

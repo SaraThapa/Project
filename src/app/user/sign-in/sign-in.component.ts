@@ -25,7 +25,7 @@ export class SignInComponent implements OnInit {
   OnSubmit(userName: string, password: string) {
     this.userService.userAuthentication(userName, password).subscribe((data: any) => {
       localStorage.setItem('userToken', data.access_token);
-      //localStorage.setItem('Role',data.access_token);
+      // localStorage.setItem('Role',data.access_token);
       this.router.navigate(['/']);
     },
       (err: HttpErrorResponse) => {

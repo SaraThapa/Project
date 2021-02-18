@@ -40,7 +40,7 @@ export class UserService {
   }
 
   getUserDetails(userId, school_id) {
-    return this.http.get(this.rootUrl + '/api/Login/GetList/' + userId + '/' + school_id);
+    return this.http.get(this.rootUrl + '/Login/GetList/' + userId + '/' + school_id);
   }
 
   getUserResults(userId, clss, terms, section, school_id, year = 2076) {

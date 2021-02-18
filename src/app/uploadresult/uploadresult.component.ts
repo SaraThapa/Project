@@ -3,7 +3,7 @@ import { UploadresultService } from '../uploadresult.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-import { StudentData } from '../student-data.model';
+
 
 
 
@@ -15,11 +15,11 @@ import { StudentData } from '../student-data.model';
 export class UploadresultComponent implements OnInit {
 
 
-  class='One';
-  section='A';
-  term='First Term';
-  year='2076';
-  subjectname=''
+  class='';
+  section='';
+  term='';
+  year='';
+  subjectname='';
   subjects:any;
   isSelectError: boolean = false
   isMarksError: boolean =false
@@ -30,6 +30,7 @@ export class UploadresultComponent implements OnInit {
   subjectSelected:any;
   allstudent:any
   theory:'';
+  fullpractical:'';
   constructor(private resultservice: UploadresultService, private router:Router) {  }
   ngOnInit(): void {
 
@@ -75,10 +76,6 @@ export class UploadresultComponent implements OnInit {
     console.warn(data);
   }
   studentMarksave(){
-    // this.resultservice.postsave(this.allstudent[0].studentid, this.class, this.section, this.term, this.year, this.subjectSelected, this.allstudent[0].theory, this.allstudent[0].practical)
-    // .subscribe(response =>{
-    //   console.log(response)
-    // });
     this.allstudent.forEach(student =>{
       this.resultservice.postsave(student.studentid, this.class, this.section, this.term, this.year, this.subjectSelected, student.theory, student.practical)
       .subscribe(response =>{
@@ -87,12 +84,15 @@ export class UploadresultComponent implements OnInit {
     });
   }
   theoryFullMarkCheck(i){
-
     if(this.subjects[this.subjectSelected -1].theory < this.allstudent[i].theory ){
-      alert('tsasdfasd');
+      alert('please enter correct number')
       this.allstudent[i].theory = this.subjects[this.subjectSelected -1].theory;
     }
-
+  }
+  practicalFullMarkCheck(i){
+    if(this.subjects[this.subjectSelected -1].fullpractical < this.allstudent[i].practical ){
+      this.allstudent[i].practical = this.subjects[this.subjectSelected -1].fullpractical;
+    }
   }
 }
 

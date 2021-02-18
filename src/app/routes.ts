@@ -10,6 +10,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ResultComponent } from './result/result.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { UploadresultComponent} from './uploadresult/uploadresult.component';
+import { NoticeComponent } from './notice/notice.component'
+import { ResultViewComponent } from './result-view/result-view.component';
 
 
 export const appRoutes: Routes = [
@@ -26,6 +28,9 @@ export const appRoutes: Routes = [
             { path: 'results', component: ResultComponent },
             { path: 'attendance', component: AttendanceComponent },
             { path: 'uploadresult', component: UploadresultComponent},
+            { path: 'notice', component: NoticeComponent},
+            { path: 'result-view', component: ResultViewComponent}
+
         ]
 
     },
@@ -40,6 +45,9 @@ export const appRoutes: Routes = [
         path: 'login', component: UserComponent,
         children: [{ path: '', component: SignInComponent }]
     },
+    {
+      path: ' ', redirectTo:'/login' , pathMatch:'full'
+    }
 
 
 ];

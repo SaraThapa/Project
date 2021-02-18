@@ -1,0 +1,14 @@
+
+h2,
+p{
+  text-align: center;
+}
+select{
+  width: 160px;
+  height: 40px;
+  align-items: center;
+}
+.btn{
+  text-align: center;
+}
+

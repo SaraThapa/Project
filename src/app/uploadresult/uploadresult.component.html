@@ -134,7 +134,7 @@
             <div class="row" *ngIf="subjects && subjects.length > 0">
               <div class="col-sm-2 mt-2">
                 <select name="subjectname" [(ngModel)]="subjectSelected" class="form-control">
-                  <option value="" >Choose Subject</option>
+                  <option value="" selected>Choose Subject</option>
                   <option [value]="i+1" *ngFor="let subject of subjects;let i = index">{{subject.subject}}</option>
                 </select>
                 <br>
@@ -167,7 +167,7 @@
               <td>{{student.name_field}}</td>
               <td>{{student.roll_Stu}}</td>
               <td><input type="number" [(ngModel)]="allstudent[i].theory" *ngIf="subjects[(subjectSelected - 1)].theory > 0" (keyup)="theoryFullMarkCheck(i)" /></td>
-              <td><input type="number" [(ngModel)]="allstudent[i].practical" *ngIf="subjects[(subjectSelected - 1)].fullpractical > 0"></td>
+              <td><input type="number" [(ngModel)]="allstudent[i].practical" *ngIf="subjects[(subjectSelected - 1)].practical > 0" (keyup)="practicalFullMarkCheck(i)" ></td>
           </tbody>
           <div class="col-sm-12">
             <button class="btn btn-primary btn-pill btn-block" (click)="studentMarksave()">save</button>

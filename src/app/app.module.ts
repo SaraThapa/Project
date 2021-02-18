@@ -24,6 +24,8 @@ import { ResultComponent } from './result/result.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { ResultViewComponent } from './result-view/result-view.component';
 import { UploadresultComponent } from './uploadresult/uploadresult.component';
+import { NoticeComponent } from './notice/notice.component';
+
 
 
 
@@ -44,6 +46,9 @@ import { UploadresultComponent } from './uploadresult/uploadresult.component';
     AttendanceComponent,
     ResultViewComponent,
     UploadresultComponent,
+    NoticeComponent,
+
+
 
 
 

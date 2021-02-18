@@ -27,20 +27,9 @@ export class UploadresultService {
   }
   postsave(StudentId, Class_Stu, Sectionfield, Terms_Exan, Year_exam, Sc_2, col1, Col2, sc_1="6023") {
     var data = "StudentId=" + StudentId + "&Class_Stu=" + Class_Stu + "&Sectionfield=" + Sectionfield + "&Terms_Exan=" + Terms_Exan + "&Year_exam=" + Year_exam + "&Sc_2=" + Sc_2 + "&col1=" + col1 + "&Col2=" + Col2 + "&sc_1=" +sc_1 ;
-    // var data = {
-    //   StudentId:StudentId,
-    //   Class_Stu:Class_Stu,
-    //   Sectionfield:Sectionfield,
-    //   Terms_Exan:Terms_Exan,
-    //   Year_exam:Year_exam,
-    //   Sc_2:Sc_2,
-    //   col1:col1,
-    //   Col2:Col2
-    // }
     var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization':
     "Bearer " + localStorage.getItem('access_Token') });
-    // let url = "http://kotbotticket-001-site3.btempurl.com/api/RawStudentSubject/GetSubject/one/A/first term/2076/6023";
-    // var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded', 'No-Auth': 'True' });
+
    let url =`${this.rootUrl}/RawStudentLedger/UpdateCustomer`;
     return this.http.post(url,data, {headers:reqHeader});
   }
