@@ -91,6 +91,7 @@ export class UploadresultComponent implements OnInit {
   }
   practicalFullMarkCheck(i){
     if(this.subjects[this.subjectSelected -1].fullpractical < this.allstudent[i].practical ){
+      alert('please enter correct number')
       this.allstudent[i].practical = this.subjects[this.subjectSelected -1].fullpractical;
     }
   }
