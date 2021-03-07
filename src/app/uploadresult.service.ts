@@ -6,8 +6,8 @@ import { asRoughYears } from '@fullcalendar/core/datelib/duration';
   providedIn: 'root'
 })
 export class UploadresultService {
-  //rootUrl = 'http://kotbotticket-001-site3.btempurl.com/api';
-    readonly rootUrl = 'api/api';
+  rootUrl = 'http://kotbotticket-001-site3.btempurl.com/api';
+    // readonly rootUrl = 'api/api';
 
   constructor(private http: HttpClient) { }
   getuploadresult(cls, section, term, year, subject, school_code){
