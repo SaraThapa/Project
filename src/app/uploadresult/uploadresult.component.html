@@ -149,7 +149,7 @@
         </div>
         </form>
         <div class="table">
-          <table *ngIf="allstudent && allstudent.length > 0" id="example" class="table table-striped table-bordered" style="width:100%">
+          <table *ngIf="allstudent && allstudent.length > 0" id="example" class="table table-striped table-bordered table-sm" style="width:100%">
             <thead>
                 <tr>
                   <th>StudentId</th>
@@ -161,11 +161,11 @@
             </thead>
             <tbody>
                 <tr *ngFor='let student of allstudent; let i = index'>
-                  <input type="text" [(ngModel)]="allstudent[i].studentid" readonly>
+                  <td>{{allstudent[i].studentid}}</td>
                   <td>{{student.name_field}}</td>
                   <td>{{student.roll_Stu}}</td>
-                  <td><input type="number" [(ngModel)]="allstudent[i].theory" *ngIf="subjects[(subjectSelected - 1)].theory > 0" (keyup)="theoryFullMarkCheck(i)" /></td>
-                  <td><input type="number" [(ngModel)]="allstudent[i].practical" *ngIf="subjects[(subjectSelected - 1)].fullpractical > 0" (keyup)="practicalFullMarkCheck(i)" ></td>
+                  <td><input class="form-control form-control-sm" type="number" [(ngModel)]="allstudent[i].theory" *ngIf="subjects[(subjectSelected - 1)].fullTheory > 0" (keyup)="theoryFullMarkCheck(i)" /></td>
+                  <td><input class="form-control form-control-sm" type="number" [(ngModel)]="allstudent[i].practical" *ngIf="subjects[(subjectSelected - 1)].fullpratical > 0" (keyup)="practicalFullMarkCheck(i)" ></td>
               </tbody>
               <div class="col-sm-12">
                 <button class="btn btn-primary btn-pill btn-block" (click)="studentMarksave()">save</button>
