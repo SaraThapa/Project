@@ -26,6 +26,7 @@ import { ResultViewComponent } from './result-view/result-view.component';
 import { UploadresultComponent } from './uploadresult/uploadresult.component';
 import { NoticeComponent } from './notice/notice.component';
 import { ExamScheduleComponent } from './exam-schedule/exam-schedule.component';
+import { BillComponent } from './bill/bill.component';
 
 
 
@@ -49,6 +50,7 @@ import { ExamScheduleComponent } from './exam-schedule/exam-schedule.component';
     UploadresultComponent,
     NoticeComponent,
     ExamScheduleComponent,
+    BillComponent,
 
 
 

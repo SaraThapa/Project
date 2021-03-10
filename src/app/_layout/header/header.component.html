@@ -74,6 +74,12 @@
             <p>Exam Schedule</p>
           </a>
         </li>
+        <li class="nav-item" *ngIf="userClaims && userClaims.role == 'Student'">
+          <a [routerLink]="['/bill']" class="nav-link">
+            <i class="nav-icon fas fa-poll-h"></i>
+            <p>Bill</p>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>

@@ -13,6 +13,7 @@ import { UploadresultComponent} from './uploadresult/uploadresult.component';
 import { NoticeComponent } from './notice/notice.component'
 import { ResultViewComponent } from './result-view/result-view.component';
 import { ExamScheduleComponent } from './exam-schedule/exam-schedule.component';
+import { BillComponent } from './bill/bill.component';
 
 
 export const appRoutes: Routes = [
@@ -31,7 +32,8 @@ export const appRoutes: Routes = [
             { path: 'uploadresult', component: UploadresultComponent},
             { path: 'notice', component: NoticeComponent},
             { path: 'result-view', component: ResultViewComponent},
-            { path: 'exam-schedule', component: ExamScheduleComponent}
+            { path: 'exam-schedule', component: ExamScheduleComponent},
+            { path: 'bill', component: BillComponent}
 
         ]
 
