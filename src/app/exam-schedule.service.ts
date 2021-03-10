@@ -5,8 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ExamScheduleService {
-  readonly rootUrl = 'http://kotbotticket-001-site3.btempurl.com';
-  // readonly rootUrl = '/api';
+  // readonly rootUrl = 'http://kotbotticket-001-site3.btempurl.com';
+  readonly rootUrl = '/api';
 
   constructor( private http: HttpClient) { }
   getExamSchedule(cls, section, term, yr, school_code){
