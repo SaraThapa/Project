@@ -36,7 +36,7 @@ export class UploadresultComponent implements OnInit {
   userClaims: any
   school_code: any
 
-  constructor(private resultservice: UploadresultService, private router:Router, private userService: UserService,) {  }
+  constructor(private resultservice: UploadresultService, private router:Router, private userService: UserService) {  }
   ngOnInit(): void {
 
     this.userService.getUserClaims().subscribe((data: any) => {

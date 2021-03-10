@@ -44,13 +44,13 @@
             <p>Dashboard</p>
           </a>
         </li>
-        <li class="nav-item" *ngIf="userClaims && userClaims.role == 'User'">
+        <li class="nav-item" *ngIf="userClaims && userClaims.role == 'Student'">
           <a [routerLink]="['/results']" class="nav-link">
             <i class="nav-icon fas fa-poll-h"></i>
             <p>Results</p>
           </a>
         </li>
-        <li class="nav-item" *ngIf="userClaims && userClaims.role == 'User'">
+        <li class="nav-item" *ngIf="userClaims && userClaims.role == 'Student'">
           <a [routerLink]="['/attendance']" class="nav-link">
             <i class="nav-icon fas fa-check-double"></i>
             <p> View Attendance</p>
@@ -62,10 +62,16 @@
             <p> Upload result</p>
           </a>
         </li>
-        <li class="nav-item" *ngIf="userClaims && userClaims.role == 'User'">
+        <li class="nav-item" *ngIf="userClaims && userClaims.role == 'Student'">
           <a [routerLink]="['/notice']" class="nav-link">
             <i class="nav-icon fas fa-poll-h"></i>
             <p> Notice</p>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="userClaims && userClaims.role == 'Student'">
+          <a [routerLink]="['/exam-schedule']" class="nav-link">
+            <i class="nav-icon fas fa-poll-h"></i>
+            <p>Exam Schedule</p>
           </a>
         </li>
       </ul>
