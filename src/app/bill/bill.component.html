@@ -19,7 +19,14 @@
       <div class="card shadow">
         <div class="card-body">
 
+          <h3 class="mb-5">
+            Last Balance: Rs. {{ last_balance }}
+          </h3>
+
+          <hr>
+
           <div class="responsive-table" *ngIf="bills.length > 0">
+            <h4>Payment Statement</h4>
             <table class="table">
               <tr>
                 <th>Data</th>
@@ -31,9 +38,9 @@
               <tr *ngFor="let bill of bills">
                 <td>{{ bill.datevalue }}</td>
                 <td>{{ bill.selectMonths }}</td>
-                <td>{{ bill.totalAmount }}</td>
-                <td>{{ bill.duePayment }}</td>
-                <td>{{ bill.balanceDue }}</td>
+                <td>Rs. {{ bill.totalAmount }}</td>
+                <td>Rs. {{ bill.duePayment }}</td>
+                <td>Rs. {{ bill.balanceDue }}</td>
               </tr>
             </table>
           </div>

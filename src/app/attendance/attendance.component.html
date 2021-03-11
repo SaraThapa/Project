@@ -18,6 +18,29 @@
 
   <div class="content">
     <div class="container-fluid">
+      <div class="card shadow">
+        <div class="card-body" *ngIf="attendance">
+
+          <h3 class="mb-5">
+            Data: {{ attendance.datevalue }}
+          </h3>
+          <table class="table table-bordered">
+            <tr>
+              <th>Date</th>
+              <th>Month</th>
+              <th>In Time</th>
+              <th>Out Time</th>
+            </tr>
+            <tr>
+              <td>{{ attendance.datevalue }}</td>
+              <td>{{ attendance.nepaMonths }}</td>
+              <td>{{ attendance.inTime }}</td>
+              <td>{{ attendance.outtime }}</td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>

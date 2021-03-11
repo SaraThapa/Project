@@ -16,4 +16,11 @@ export class BillService {
     let url= `${this.rootUrl}/api/StudentBillStatement/GetBillStudent/${studentID}/${school_code}`;
     return this.http.get(url,{headers:reqHeader});
   }
+  getLastBalance(studentID, school_code){
+    var reqHeader = new HttpHeaders({'content-Type': 'application/x-www-urlencoded', 'Authorization':
+    "Bearer " + localStorage.getItem('access_Token') });
+    // let url= this.rootUrl + "api/GetNewsPort/Getnews//6023/Two";
+    let url= `${this.rootUrl}/api/StudentLastBalance/GetLastBalance/${studentID}/${school_code}`;
+    return this.http.get(url,{headers:reqHeader});
+  }
 }
