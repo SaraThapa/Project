@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ResultComponent implements OnInit {
   term = ''
   term_value = ''
+  year = ''
 
   constructor() { }
 

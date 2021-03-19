@@ -27,6 +27,7 @@ import { UploadresultComponent } from './uploadresult/uploadresult.component';
 import { NoticeComponent } from './notice/notice.component';
 import { ExamScheduleComponent } from './exam-schedule/exam-schedule.component';
 import { BillComponent } from './bill/bill.component';
+import { NgxLoadingModule } from 'ngx-loading';
 
 
 
@@ -51,18 +52,13 @@ import { BillComponent } from './bill/bill.component';
     NoticeComponent,
     ExamScheduleComponent,
     BillComponent,
-
-
-
-
-
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
-
+    RouterModule.forRoot(appRoutes),
+    NgxLoadingModule.forRoot({})
   ],
   //providers: [UserService],
   providers: [{ provide: APP_BASE_HREF, useValue: '' }, AuthGuard, {

@@ -14,6 +14,7 @@ export class ResultViewComponent implements OnInit {
   userId: any
   schoolId: any
   @Input() term: ''
+  @Input() year: ''
 
   constructor(
     private userService: UserService,
@@ -28,7 +29,7 @@ export class ResultViewComponent implements OnInit {
       this.userService.getUserDetails(username[0], username[1]).subscribe((data: any) => {
         this.userDetails = data[0];
 
-        this.userService.getUserResults(username[0], this.userDetails.class_Student, this.term, this.userDetails.sectionField, username[1]).subscribe((data: any) => {
+        this.userService.getUserResults(username[0], this.userDetails.class_Student, this.term, this.userDetails.sectionField, username[1], this.year).subscribe((data: any) => {
           this.userResults = data;
 
         });
