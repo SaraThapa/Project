@@ -15,4 +15,10 @@ export class AttendanceService {
     let url= `${this.rootUrl}/api/AttedanceStu/GetattedanceStu/${studentID}/${from_date}/${to_date}/${school_code}`;
     return this.http.get(url,{headers:reqHeader});
   }
+  getFullAttendance(studentID,month, year, school_code){
+    var reqHeader = new HttpHeaders({'content-Type': 'application/x-www-urlencoded', 'Authorization':
+    "Bearer " + localStorage.getItem('access_Token') });
+    let url= `${this.rootUrl}/api/AttedancebyMonthStu/GetattedanceMonthly/${studentID}/${month}/${year}/${school_code}`;
+    return this.http.get(url,{headers:reqHeader});
+  }
 }

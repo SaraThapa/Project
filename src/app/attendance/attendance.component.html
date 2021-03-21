@@ -19,24 +19,77 @@
   <div class="content">
     <div class="container-fluid">
       <div class="card shadow">
-        <div class="card-body" *ngIf="attendance">
-          <h3 class="mb-5">
-            Data: {{ attendance.datevalue }}
-          </h3>
-          <table class="table table-bordered">
-            <tr>
-              <th>Date</th>
-              <th>Month</th>
-              <th>In Time</th>
-              <th>Out Time</th>
-            </tr>
-            <tr>
-              <td>{{ attendance.datevalue }}</td>
-              <td>{{ attendance.nepaMonths }}</td>
-              <td>{{ attendance.inTime }}</td>
-              <td>{{ attendance.outtime }}</td>
-            </tr>
-          </table>
+        <div class="card-body">
+          <div *ngIf="attendance">
+            <h3 class="mb-5">
+              Data: {{ attendance.datevalue }}
+            </h3>
+            <table class="table table-bordered">
+              <tr>
+                <th>Date</th>
+                <th>Month</th>
+                <th>In Time</th>
+                <th>Out Time</th>
+              </tr>
+              <tr>
+                <td>{{ attendance.datevalue }}</td>
+                <td>{{ attendance.nepaMonths }}</td>
+                <td>{{ attendance.inTime }}</td>
+                <td>{{ attendance.outtime }}</td>
+              </tr>
+            </table>
+            <hr>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-2">
+              <select class="form-control" [(ngModel)]="month" name="month">
+                <option value="">Select Month</option>
+                <option value="falgun">Falgun</option>
+                <option value="chaitra">Chaitra</option>
+              </select>
+            </div>
+            <div class="col-sm-2">
+              <select class="form-control" [(ngModel)]="year" name="year">
+                <option value="">Select year</option>
+                <option value="2076">2076</option>
+                <option value="2077">2077</option>
+                <option value="2078">2078</option>
+                <option value="2079">2079</option>
+                <option value="2080">2080</option>
+                <option value="2081">2081</option>
+                <option value="2082">2082</option>
+                <option value="2083">2083</option>
+                <option value="2084">2084</option>
+                <option value="2085">2085</option>
+                <option value="2086">2086</option>
+                <option value="2087">2087</option>
+                <option value="2088">2088</option>
+                <option value="2089">2089</option>
+                <option value="2090">2090</option>
+                <option value="UT1">UT1</option>
+                <option value="UT2">UT2</option>
+                <option value="UT3">UT3</option>
+                <option value="UT4">UT4</option>
+                <option value="CT1">CT1</option>
+                <option value="CT2">CT2</option>
+                <option value="CT3">CT3</option>
+                <option value="CT4">CT4</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <button class="btn btn-primary btn-pill btn-block"  (click)="submit()">Submit</button>
+            </div>
+          </div>
+
+          <div *ngIf="fullAttendance && fullAttendance.length > 0">
+            <p>
+              <b>Name</b> : {{ fullAttendance.studentName }} <br>
+              <b>Roll</b> : {{ fullAttendance.roll }} <br>
+              <b>Class</b> : {{ fullAttendance.class }} <br>
+              <b>Sec</b> : {{ fullAttendance.sec }}
+            </p>
+          </div>
 
         </div>
       </div>
