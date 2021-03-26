@@ -25,9 +25,9 @@
 
           <hr>
 
-          <div class="responsive-table" *ngIf="bills.length > 0">
+          <div class="table-responsive" *ngIf="bills.length > 0">
             <h4>Payment Statement</h4>
-            <table class="table">
+            <table class="table table-bordered table-sm">
               <tr>
                 <th>Data</th>
                 <th>Month</th>
@@ -36,11 +36,11 @@
                 <th>Balance Due</th>
               </tr>
               <tr *ngFor="let bill of bills">
-                <td>{{ bill.datevalue }}</td>
+                <td>{{ bill.datevalue.split('T')[0] }}</td>
                 <td>{{ bill.selectMonths }}</td>
-                <td>Rs. {{ bill.totalAmount }}</td>
-                <td>Rs. {{ bill.duePayment }}</td>
-                <td>Rs. {{ bill.balanceDue }}</td>
+                <td>Rs.{{ bill.totalAmount }}</td>
+                <td>Rs.{{ bill.duePayment }}</td>
+                <td>Rs.{{ bill.balanceDue }}</td>
               </tr>
             </table>
           </div>

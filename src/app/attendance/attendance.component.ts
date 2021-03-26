@@ -17,7 +17,7 @@ export class AttendanceComponent implements OnInit {
   month: any = ''
   year: any = ''
 
-  fullAttendance: any
+  fullAttendance: any = ''
 
 
 
@@ -36,6 +36,10 @@ export class AttendanceComponent implements OnInit {
         this.attendance = data[0];
       });
     });
+  }
+
+  numSequence(n: number): Array<number> {
+    return Array(n);
   }
 
   submit(){

@@ -82,13 +82,30 @@
             </div>
           </div>
 
-          <div *ngIf="fullAttendance && fullAttendance.length > 0">
+          <div *ngIf="fullAttendance" class="mt-3">
             <p>
               <b>Name</b> : {{ fullAttendance.studentName }} <br>
               <b>Roll</b> : {{ fullAttendance.roll }} <br>
               <b>Class</b> : {{ fullAttendance.class }} <br>
               <b>Sec</b> : {{ fullAttendance.sec }}
             </p>
+            <div class="table-responsive">
+              <table class="table table-bordered table-sm">
+                <tr>
+                  <td>Day</td>
+                  <td>Status</td>
+                </tr>
+                <tr *ngFor="let day of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32]">
+                  <td>Day {{ day }}</td>
+                  <td>
+                    <span *ngIf="fullAttendance['c' + day] == 1 ; else elseDay" class="text-success">Present</span>
+                    <ng-template #elseDay>
+                      <span class="text-danger">Absence</span>
+                    </ng-template>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </div>
 
         </div>
