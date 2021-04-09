@@ -6,13 +6,13 @@ import { asRoughYears } from '@fullcalendar/core/datelib/duration';
   providedIn: 'root'
 })
 export class UploadresultService {
-  rootUrl = 'http://kotbotticket-001-site3.btempurl.com/api';
-    // readonly rootUrl = 'api/api';
+  // rootUrl = 'http://kotbotticket-001-site3.btempurl.com/api';
+  readonly rootUrl = 'api/api';
 
   constructor(private http: HttpClient) { }
   getuploadresult(cls, section, term, year, subject, school_code){
-    // var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded', 'Authorization':
-    // "Bearer " + localStorage.getItem('access_Token') });
+    var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded', 'Authorization':
+    "Bearer " + localStorage.getItem('access_Token') });
     // let url="http://kotbotticket-001-site3.btempurl.com/api/RawStudentLedger/GetStudent/One/A/first term/2076/1/6023";
     // let url = this.rootUrl + "/api/RawStudentLedger/GetStudent/one/A/first term/2076/6023";
     let url =`${this.rootUrl}/RawStudentLedger/GetStudent/${cls}/${section}/${term}/${year}/${subject}/${school_code}`;
