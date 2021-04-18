@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://kotbotticket-001-site3.btempurl.com",
+    "target": "http://schoolapi.gosaracloud.com",
     "secure": false,
     "pathRewrite": {
       "^/api": ""
