@@ -7347,6 +7347,13 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
+ngx-loading@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-loading/-/ngx-loading-8.0.0.tgz#0d5b64178f45fe56d09598ece305b6b740f3c8bc"
+  integrity sha512-22q7/ILp0rswl7m3OkKZdIK7rHs7wojd2mGRfxgWWug7C29d3hWL7GE+h1sm12UZMS7VDXSFyTc6wO7APRYJ0Q==
+  dependencies:
+    tslib "^1.9.0"
+
 ngx-toastr@^12.0.1:
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/ngx-toastr/-/ngx-toastr-12.1.0.tgz#50f6eee4262f4ba342918f06f98a657f223194cf"
